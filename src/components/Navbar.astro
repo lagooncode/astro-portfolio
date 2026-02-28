@@ -1,0 +1,55 @@
+<header class="navbar">
+  <div class="container">
+    <div class="inner-nav">
+      <div class="nav-logo">Abraham Tovar</div>
+      <ul class="nav-links">
+        <li><a href="#">Works</a></li>
+        <li class="source-link">
+          <img
+            src="/images/github-logo.svg"
+            alt="Github Logo"
+            class="github-icon"
+          />
+          <a href="https://github.com/lagooncode" target="_blank">Source</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<style>
+  .navbar {
+    padding: 1.5rem 0;
+  }
+
+  .inner-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-logo {
+    font-weight: 500;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: clamp(1rem, 3vw, 2rem);
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-weight: 300;
+  }
+
+  .source-link {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+  }
+
+  .github-icon {
+    width: clamp(1rem, 2vw, 1.5rem);
+    height: auto;
+  }
+</style>
