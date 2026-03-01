@@ -1,7 +1,7 @@
 <header class="navbar">
   <div class="container">
     <div class="inner-nav">
-      <div class="nav-logo">Abraham Tovar</div>
+      <a href="#" class="nav-logo">Abraham Tovar</a>
       <ul class="nav-links">
         <li><a href="#works">Works</a></li>
         <li class="source-link">
@@ -11,6 +11,9 @@
             class="github-icon"
           />
           <a href="https://github.com/lagooncode" target="_blank">Source</a>
+        </li>
+        <li>
+          <button class="theme-toggle" id="theme-toggle">🌙</button>
         </li>
       </ul>
     </div>
@@ -24,6 +27,7 @@
     top: 0;
     z-index: 100;
     background-color: var(--color-bg);
+    transition: background-color 0.3s ease;
   }
 
   .inner-nav {
@@ -35,6 +39,23 @@
   .nav-logo {
     font-weight: 600;
     font-size: var(--text-base);
+    position: relative;
+    display: inline-block;
+  }
+
+  .nav-logo::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: width 0.3s ease;
+  }
+
+  .nav-logo:hover::after {
+    width: 100%;
   }
 
   .nav-links {
@@ -74,4 +95,25 @@
     width: clamp(1rem, 2vw, 1.5rem);
     height: auto;
   }
+
+  :root.dark .github-icon {
+  filter: invert(1);
+}
+
+  .theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: var(--text-base);
+    padding: 0;
+    line-height: 1;
+  }
 </style>
+
+<script is:inline>
+  const btn = document.getElementById('theme-toggle');
+  btn.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+    btn.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+  });
+</script>

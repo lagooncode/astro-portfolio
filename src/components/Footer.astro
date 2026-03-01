@@ -1,0 +1,32 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-section">
+      <p class="footer-copy">© {year} lagooncode 🇻🇪</p>
+      <p class="footer-made">Made with ❤️ by <span class="accent">lagooncode</span></p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 0 1.5rem 0;
+    font-size: var(--text-sm);
+    font-weight: 300;
+    color: #6b6b6b;
+  }
+
+  @media (max-width: 540px) {
+    .footer-section {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+  }
+</style>

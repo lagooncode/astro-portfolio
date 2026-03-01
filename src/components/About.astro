@@ -34,11 +34,13 @@ const techs = [
   .about-section {
     display: flex;
     flex-direction: column;
-    gap: 1.3rem;
-    padding-top: clamp(1.6rem, 3vw, 2.6rem);
-    padding-bottom: clamp(3rem, 6vw, 2.5rem);
+    gap: 1rem;
+    padding-top: var(--section-padding-top);
+    padding-bottom: var(--section-padding-bottom);
   }
-  .about-title .tech-title {
+
+  .about-title,
+  .tech-title {
     font-weight: 700;
     font-size: var(--text-md);
   }
@@ -48,10 +50,6 @@ const techs = [
     font-size: var(--text-base);
     line-height: 1.6;
     text-align: justify;
-  }
-
-  .tech-title {
-    margin-top: 1rem;
   }
 
   .tech-list {
