@@ -1,3 +1,16 @@
+---
+const techs = [
+  "JavaScript",
+  "React",
+  "Node",
+  "Python",
+  "Astro",
+  "AWS",
+  "Docker",
+  "Git",
+];
+---
+
 <section class="about">
   <div class="container">
     <div class="about-section">
@@ -8,6 +21,11 @@
         looking for new technologies to learn. I believe that great software
         comes from curiosity, consistency and attention to detail.
       </p>
+
+      <h2 class="tech-title">Tech I use</h2>
+      <ul class="tech-list">
+        {techs.map((tech) => <li class="tech-tag">{tech}</li>)}
+      </ul>
     </div>
   </div>
 </section>
@@ -16,19 +34,44 @@
   .about-section {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.3rem;
     padding-top: clamp(1.6rem, 3vw, 2.6rem);
-    padding-bottom: clamp(3rem, 6vw, 5rem);
+    padding-bottom: clamp(3rem, 6vw, 2.5rem);
   }
-  .about-title {
+  .about-title .tech-title {
     font-weight: 700;
     font-size: var(--text-md);
   }
 
-  .about-text{
+  .about-text {
     font-weight: 300;
     font-size: var(--text-base);
     line-height: 1.6;
+    text-align: justify;
+  }
 
+  .tech-title {
+    margin-top: 1rem;
+  }
+
+  .tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .tech-tag {
+    display: inline-block;
+    font-size: var(--text-sm);
+    font-weight: 400;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid #d1d5db;
+    border-radius: 999px;
+    color: var(--color-text);
+    transition: transform 0.2s ease;
+  }
+
+  .tech-tag:hover {
+    transform: translateY(-3px);
   }
 </style>

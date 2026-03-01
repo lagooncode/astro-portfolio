@@ -3,7 +3,7 @@
     <div class="inner-nav">
       <div class="nav-logo">Abraham Tovar</div>
       <ul class="nav-links">
-        <li><a href="#">Works</a></li>
+        <li><a href="#works">Works</a></li>
         <li class="source-link">
           <img
             src="/images/github-logo.svg"
@@ -46,6 +46,22 @@
   .nav-links a {
     font-weight: 400;
     font-size: var(--text-sm);
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
   }
 
   .source-link {

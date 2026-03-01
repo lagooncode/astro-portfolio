@@ -29,18 +29,22 @@ const { title } = Astro.props;
   }
 
   :root {
-  --color-bg: #fafafa;
-  --color-text: #1a1a1a;
-  --color-accent: #0ea5e9;
-  --text-sm: clamp(0.8rem, 1.5vw, 0.9rem);      /* links navbar, texto pequeño */
-  --text-base: clamp(1rem, 2vw, 1.2rem);         /* cuerpo, bio */
-  --text-md: clamp(1.6rem, 2.5vw, 1.8rem);         /* typewriter */
-  --text-lg: clamp(1.8rem, 4vw, 2.6rem);            /* subtítulos, "Hey 👋" */
-  --text-xl: clamp(2.4rem, 5vw, 3.4rem);
-  --padding-x: clamp(1rem, 3vw, 1.5rem);            
-}
+    --color-bg: #fafafa;
+    --color-text: #1a1a1a;
+    --color-accent: #0ea5e9;
+    --text-sm: clamp(0.9rem, 1.5vw, 1rem); /* links navbar, texto pequeño */
+    --text-base: clamp(1rem, 2vw, 1.2rem); /* cuerpo, bio */
+    --text-md: clamp(1.6rem, 2.5vw, 1.4rem); /* typewriter */
+    --text-lg: clamp(1.8rem, 4vw, 2.6rem); /* subtítulos, "Hey 👋" */
+    --text-xl: clamp(2.4rem, 5vw, 3.4rem);
+    --padding-x: clamp(1rem, 3vw, 1.5rem);
+  }
 
-  body{
+  * {
+    scroll-behavior: smooth;
+  }
+
+  body {
     font-family: Geologica, sans-serif;
     background-color: var(--color-bg);
     color: var(--color-text);
@@ -61,4 +65,3 @@ const { title } = Astro.props;
     padding: 0 var(--padding-x);
   }
 </style>
-

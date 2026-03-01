@@ -1,0 +1,118 @@
+---
+const projects = [
+  {
+    name: "iShop",
+    description: "E-commerce app built with React, Redux and Material UI. Includes cart management, authentication and Stripe payment integration.",
+    techs: ["React", "Redux", "Material UI", "Stripe", "Node.js", "SQL"],
+    github: "https://github.com/lagooncode/tu-repo",
+    demo: null,
+    image: "https://placehold.co/300x200"
+  }
+];
+---
+
+<section id="works" class="projects">
+  <div class="container">
+    <div class="projects-section">
+      <h2 class="projects-title"><span class="accent">&lt;</span>Projects <span class="accent">/&gt;</span></h2>
+      {projects.map((project) => (
+        <div class="project-card">
+          <img src={project.image} alt={project.name} class="project-img" />
+          <div class="project-info">
+            <h3 class="project-name">{project.name}</h3>
+            <p class="project-desc">{project.description}</p>
+            <ul class="project-techs">
+              {project.techs.map((tech) => (
+                <li class="project-tech">{tech}</li>
+              ))}
+            </ul>
+          </div>
+          <a href={project.github} target="_blank" class="project-link">→</a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: clamp(1.2rem, 3vw, 0.2rem);
+    padding-bottom: clamp(3rem, 6vw, 5rem);
+  }
+
+  .projects-title {
+    font-weight: 700;
+    font-size: var(--text-md);
+    margin-bottom: 1.3rem;
+  }
+
+  .project-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid #e5e7eb;
+    transition: transform 0.2s ease;
+  }
+
+  .project-card:hover {
+    transform: translateX(4px);
+  }
+
+  .project-img {
+    width: clamp(80px, 15vw, 140px);
+    height: auto;
+    border-radius: 6px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .project-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex: 1;
+  }
+
+  .project-name {
+    font-weight: 700;
+    font-size: var(--text-base);
+  }
+
+  .project-desc {
+    font-weight: 300;
+    font-size: var(--text-base);
+    color: #6b6b6b;
+    line-height: 1.5;
+  }
+
+  .project-techs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.4rem;
+  }
+
+  .project-tech {
+    font-size: var(--text-sm);
+    padding: 0.2rem 0.7rem;
+    border: 1px solid #d1d5db;
+    border-radius: 999px;
+    color: var(--color-text);
+  }
+
+  .project-link {
+    font-size: var(--text-md);
+    color: var(--color-accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .project-link:hover {
+    transform: translateX(4px);
+  }
+</style>
