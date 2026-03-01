@@ -89,38 +89,38 @@
 </style>
 
 <script is:inline>
-  const palabras = [
+  const words = [
     "Software Developer",
     "Cloud Enthusiast",
     "Lifelong Learner",
   ];
-  const elemento = document.getElementById("typewriter");
-  let indicePalabra = 0;
-  let indiceLetra = 0;
-  let borrando = false;
+  const element = document.getElementById("typewriter");
+  let wordIndex = 0;
+  let letterIndex = 0;
+  let deleting = false;
 
-  function escribir() {
-    const palabraActual = palabras[indicePalabra];
+  function type() {
+    const currentWord = words[wordIndex];
 
-    if (!borrando) {
-      elemento.textContent = palabraActual.slice(0, indiceLetra + 1);
-      indiceLetra++;
-      if (indiceLetra === palabraActual.length) {
-        borrando = true;
-        setTimeout(escribir, 1500);
+    if (!deleting) {
+      element.textContent = currentWord.slice(0, letterIndex + 1);
+      letterIndex++;
+      if (letterIndex === currentWord.length) {
+        deleting = true;
+        setTimeout(type, 1500);
         return;
       }
     } else {
-      elemento.textContent = palabraActual.slice(0, indiceLetra - 1);
-      indiceLetra--;
-      if (indiceLetra === 0) {
-        borrando = false;
-        indicePalabra = (indicePalabra + 1) % palabras.length;
+      element.textContent = currentWord.slice(0, letterIndex - 1);
+      letterIndex--;
+      if (letterIndex === 0) {
+        deleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
       }
     }
 
-    setTimeout(escribir, borrando ? 60 : 100);
+    setTimeout(type, deleting ? 60 : 100);
   }
 
-  escribir();
+  type();
 </script>
